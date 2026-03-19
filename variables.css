@@ -1,0 +1,15 @@
+:root{
+    --main-bg-color: #F4F4E7;
+    --footer-bg-color: #2F2F2B;
+    --scroll-dots-active-color: #7A766C;
+    --scroll-dots-default-color: #D8D4C8;
+
+    /* px / 919px * 100 = vh */
+    --ratio-160px: 17.4vh;
+    --ratio-80px: 8.7vh;
+    --ratio-40px: 4.35vh;
+    --ratio-30px: 3.26vh;
+    --ratio-25px: 2.72vh;
+
+    --header-h: 120px;
+}
