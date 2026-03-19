@@ -64,17 +64,9 @@ html{
 
 #p1__banner{ /* 1920px x 593px */
     width: 100%;
-    height: 50vh;
-    /* background-color: coral; */
-
-    /* background-image: url(img/Banner2.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: auto 100%; */
-
-    z-index: 3;
+    height: 400px;
     
-    overflow: hidden;
+    /* overflow: hidden; */
     color: white;
     text-align: center;
 
@@ -82,10 +74,10 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-image: url(img/Banner2.png);
 }
-#p1__banner img{
-    width: 100%;
-}
+
 #p1__banner p{
     font-size: 64px;
 }
@@ -93,42 +85,34 @@ html{
     font-size: 24px;
 }
 
-/* ----첫 페이지 카테고리 별 제품 다섯 개----------------- */
+/* ----첫 페이지 카테고리 별 제품 다섯 개--------- */
 #p1__prods__list{
-    width: 60%;
-    height: 20vh;
-    background-color: red;
+    width: 72%;
+    /* background-color: red; */
     margin: 0 auto;
-    /* margin-top: -40px; */
-    z-index: 100;
-    position: relative;
-    bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
 }
 
 .p1__prods__item{
-    background-color: yellow;
-    width: calc(92% / 5);
+    /* background-color: yellow; */
+    width: 128px;
     height: 100%;
-    float: left;
-    margin-left: 2%;
 }
-.p1__prods__item:nth-of-type(1){margin-left: 0;}
 
 .p1__prods__item img{
-    /* width: 94%; */
-    height: 94%;
-    background-color:darkorange;
-    margin: 0 auto;
+    width: 100%;
+    /* background-color:darkorange; */
 }
 .p1__prods__item p{
-    background-color:darkgrey;
-    margin: 0 auto;
+    /* background-color:darkgrey; */
     text-align: center;
 }
 
 #p1__arrow{
-    width: 30px;
-    height: 60px;
+    width: 40px;
+    height: 52px;
     margin: 0 auto;
 }
 
@@ -136,7 +120,6 @@ html{
 .p2__container{ /* 두 개의 큰 틀 */
     background-color: yellow;
     width: 1100px;
-    height: 40vh;
     margin-top: 20px;
     position: relative;
     left: 50%;
@@ -255,19 +238,32 @@ html{
 /* -----페이지5----------------------------------------------------- */
 #p5__txt__container{}
 
-#p5__list__container{}
+#p5__list__container{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
 
-.p5__item{
+.p5__item__container{
+    background-color: var(--main-bg-color);
     width: 300px;
     float: left;
-    background-color: var(--main-bg-color);
+    display: grid;
+    place-items: center;
+    border: 20px;
+}
+
+.p5__item{
+    /* display: flex; */
 }
 
 .p5__item__img{
-    width: 100%
+    width: 80%
 }
 
-.p5__item__txt{}
+.p5__item__txt{
+    background-color: pink;
+}
 
 /* -----footer----------------------------------------------------- */
 #footer__container{
@@ -317,10 +313,9 @@ html{
 }
 /* ---------------------------------------------------------- */
 
-#dots{
+/* #dots{
     width: 8px;
     height: 80px;
-    /* background-color: black; */
     position: relative;
     top: 50%;
     left: 98%;
@@ -343,7 +338,7 @@ html{
     background-color: var(--scroll-dots-active-color);
     position: relative;
     right: 16px;
-}
+} */
 
 
 .fp-slidesNav
@@ -351,22 +346,28 @@ html{
 
 /* ----------------------------------- */
 .section{
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
+    background-size: f;
 }
-.section:first-child .content{
-    padding-top:120px;
-}
-.section:last-child{ /* footer */
-    height: 300px;
-    /* padding-top: 0px; */ 
+#section1{background-image: url(img/background/Bg_page1.png);}
+#section2{background-image: url(img/background/Bg_page2_texture1.png);}
+#section3{background-image: url(img/background/Bg_page3.png);}
+#section4{background-image: url(img/background/Bg_page4.png);}
+#section5{background-image: url(img/background/Bg_page5.png);}
+
+.bg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .content--wrapper{
     width: 100%;
     height: 100%;
     z-index: 10;
-    background-color: gray;
+    box-shadow: 0 0 0 2px red inset;
+    margin-top: var(--header-h);
 }
 /* ----------------------------------- */
 #footer{
