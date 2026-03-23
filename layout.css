@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-*{margin:0;padding:0}
+*{margin:0;padding:0;box-sizing: border-box;}
 li{list-style: none;}
 
 @font-face{
@@ -18,7 +18,8 @@ html{
 
 #header{
     position: fixed;
-    top: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: var(--header-h);
     z-index: 100;
@@ -39,8 +40,8 @@ html{
 #logo img:nth-of-type(2){display: none;}
 
 #nav{
-    width: 501px;
-    height: 40px;
+    width: 500px;
+    height: 4vh;
     /* background-color: yellow; */
     margin: 0 auto;
     display: flex;
@@ -48,14 +49,14 @@ html{
 }
 .nav__item{
     width: auto;
-    height: 40px;
+    height: 4vh;
     /* background-color: silver; */
     margin-left: 0px;
     float: left;
     color: black;
     font-size: 16px;
     text-align: center;
-    line-height: 40px;
+    line-height: 4vh;
     cursor: pointer;
 }
 .nav__item:nth-of-type(1){margin-left: 0px;}
@@ -64,7 +65,7 @@ html{
 
 #p1__banner{ /* 1920px x 593px */
     width: 100%;
-    height: 400px;
+    height: 56vh;
     
     /* overflow: hidden; */
     color: white;
@@ -73,31 +74,34 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    
+    margin-top: var(--header-h);
 
     background-image: url(img/Banner2.png);
 }
 
 #p1__banner p{
-    font-size: 64px;
+    font-size: 8vh;
 }
 #p1__banner span{
-    font-size: 24px;
+    font-size: 3vh;
 }
 
-/* ----첫 페이지 카테고리 별 제품 다섯 개--------- */
+/* ------------------------ */
 #p1__prods__list{
     width: 72%;
     /* background-color: red; */
-    margin: 0 auto;
+    margin: -12vh auto 0;
+
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 8vh;
     align-items: baseline;
 }
 
 .p1__prods__item{
     /* background-color: yellow; */
-    width: 128px;
+    width: 16vh;
     height: 100%;
 }
 
@@ -110,10 +114,23 @@ html{
     text-align: center;
 }
 
+/* ------------------------ */
 #p1__arrow{
-    width: 40px;
-    height: 52px;
-    margin: 0 auto;
+    width: 4vh;
+    height: 4vh;
+    /* background-color: orange; */
+    margin: 4vh auto;
+    animation: blink 1.6s infinite;
+}
+
+#p1__arrow img{
+    width: 100%;
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
 }
 
 /* -----페이지2----------------------------------------------------- */
@@ -217,12 +234,22 @@ html{
 }
 
 /* -----페이지4----------------------------------------------------- */
+#p4__container{
+    display: flex;
+    justify-content: space-around;
+    /* align-items: baseline; */
+    justify-items: center;
+}
+
 #p4__video{}
-#p4__video video{}
+#p4__video iframe{}
 
 #p4__prods{}
 
-#p4__prods__list{}
+#p4__prods__list{
+    display: flex;
+    justify-content: space-between;
+}
 
 .p4__prods__item{
     width: 100px;
@@ -233,35 +260,63 @@ html{
     width: 100%;
 }
 
-.shadow
+.shadow{}
 
 /* -----페이지5----------------------------------------------------- */
-#p5__txt__container{}
+#p5__txt__container{
+    max-width: 320px;
+    /* background-color: blue; */
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 80px;
+}
+
+#p5__txt__container h2,
+#p5__txt__container p{
+
+}
 
 #p5__list__container{
+    /* background-color: yellow; */
+    width: fit-content;
+    /* padding: 40px; */
+}
+
+#p5__list{
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-    padding: 40px;
+    gap: 20px;
 }
 
 .p5__item__container{
     background-color: var(--main-bg-color);
     width: 300px;
-    float: left;
-    display: grid;
-    place-items: center;
-    border: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.p5__item__container:hover{
+    background-color: var(--hover--color);
+    transition: 0.3s;
 }
 
 .p5__item{
-    /* display: flex; */
+    width: fit-content;
+    text-align: left;
+    /* background-color: green; */
+    
 }
 
 .p5__item__img{
-    width: 80%
+    width: 250px;
 }
 
 .p5__item__txt{
+    width: fit-content;
     background-color: pink;
 }
 
@@ -269,42 +324,49 @@ html{
 #footer__container{
     background-color: var(--footer-bg-color);
     display: flex;
-    justify-content: space-around;
-    padding: 40px;
+    justify-content: center;
+    gap: 8vh;
+    padding: 64px;
 }
 
 
 #footer__txt__list{
     /* background-color: yellow; */
-    width: 1000px;
+    width: 120vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .footer__txt__item{
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
     color: white;
 }
 
 .footer__txt__item p, span{
     font-size: 12px;
-    margin-top: 8px;
+    margin-top: 2vh;
 }
 
 /* ------------------------ */
+#footer{
+    background-color: var(--footer-bg-color);
+    color: white;
+}
 
 #footer__icon__list{
     /* background-color: yellow; */
-    width: 300px;
+    width: 40vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 4vh;
     align-items: center;
 }
 
 .footer__icon__item{
-    width: 24px;
+    width: 4vh;
     float: left;
 }
 
@@ -346,9 +408,13 @@ html{
 
 /* ----------------------------------- */
 .section{
-    /* position: relative; */
+    height: 100vh;
+    padding-top: var(--header-h);
+
+    
     overflow: hidden;
-    background-size: f;
+    /* position: relative; */
+    /* background-size: f; */
 }
 #section1{background-image: url(img/background/Bg_page1.png);}
 #section2{background-image: url(img/background/Bg_page2_texture1.png);}
@@ -365,15 +431,12 @@ html{
 .content--wrapper{
     width: 100%;
     height: 100%;
-    z-index: 10;
-    box-shadow: 0 0 0 2px red inset;
+
     margin-top: var(--header-h);
+    
+    box-shadow: 0 0 0 2px red inset;
 }
 /* ----------------------------------- */
-#footer{
-    background-color: var(--footer-bg-color);
-    color: white;
-}
 
 
 .fp-watermark{display:none}
