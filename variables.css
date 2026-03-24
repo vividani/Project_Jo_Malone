@@ -1,10 +1,17 @@
 :root{
     --main-bg-color: #F4F4E7;
+    --main-bg-color-60: rgba(244, 244, 231, 0.6);
     --footer-bg-color: #2F2F2B;
     --scroll-dots-active-color: #7A766C;
     --scroll-dots-default-color: #D8D4C8;
 
-    --hover--color: #ECEADB;
+    --hover-color: #ECEADB;
+
+    --point-color-60: rgba(234, 223, 150, 0.6);
+
+    --shadow-color: rgba(30, 30, 28, 0.46);
+
+    --line-color: #B4B1A5;
 
     /* px / 919px * 100 = vh */
     --ratio-160px: 17.4vh;

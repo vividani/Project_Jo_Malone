@@ -2,6 +2,7 @@
 
 *{margin:0;padding:0;box-sizing: border-box;}
 li{list-style: none;}
+img { vertical-align: top; width: 100% }
 
 @font-face{
     font-family: "RR";
@@ -96,7 +97,7 @@ html{
     display: flex;
     justify-content: center;
     gap: 8vh;
-    align-items: baseline;
+    align-items: last baseline;
 }
 
 .p1__prods__item{
@@ -105,10 +106,6 @@ html{
     height: 100%;
 }
 
-.p1__prods__item img{
-    width: 100%;
-    /* background-color:darkorange; */
-}
 .p1__prods__item p{
     /* background-color:darkgrey; */
     text-align: center;
@@ -123,10 +120,6 @@ html{
     animation: blink 1.6s infinite;
 }
 
-#p1__arrow img{
-    width: 100%;
-}
-
 @keyframes blink{
     0%{opacity: 0;}
     50%{opacity: 1;}
@@ -134,77 +127,95 @@ html{
 }
 
 /* -----페이지2----------------------------------------------------- */
-.p2__container{ /* 두 개의 큰 틀 */
-    background-color: yellow;
-    width: 1100px;
-    margin-top: 20px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+#p2__container{
+    /* background-color: skyblue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+#p2__track{
+    display: flex;
+    flex-direction: row;
+    width: 880px;
+    overflow: hidden;
+    transition: transform 0.6s;
+}
+
+.p2__slide{
+    display: flex;
+    flex-direction: column;
+}
+
+.p2__slider{ /* 두 개의 큰 틀 */
+    /* background-color: yellow; */
+    width: 880px;
+    height: calc((100vh - 120px) / 2);
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+.p2__slider--right{
+    flex-direction: row-reverse;
+}
+.p2__slider--right .p2__txt{
+    align-items: flex-end;
+
+}
+/* --------------------- */
+.p2__arrow{
+    width: 48px;
+    cursor: pointer;
+}
+
+/* --------------------- */
+.p2__prods__img{ /* page2 큰 이미지 */
+    width: 240px;
+    height: 260px;
+    object-fit: cover;
 }
 
 .p2__txt-and-list{
-    width: 70%;
-    height: 300px;
-    background-color: purple;
+    width: 600px;
+    height: 280px;
+    /* background-color: purple; */
 }
 
+
+/* --------------------- */
 .p2__txt{ /* 글씨들 */
-    position: absolute;
-    top: 0px;
-    right: 280px;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
+    display: flex;
+    flex-direction: column;
 }
 
 .p2__txt p{
     font-size: 30px;
 }
 .p2__txt hr{
-    width: 45%;
-    top: 10px;
-    right: 0px;
+    width: 120px;
+    height: 2px;
+    background-color: var(--line-color);
+    border: 0;
 }
 .p2__txt span{
     font-size: 16px;
 }
 /* --------------------- */
 .p2__list{ /* 제품 다섯 개 */
-    background-color: pink;
-    width:fit-content;
-    position: absolute;
-    bottom: 0px;
+    /* background-color: pink; */
+    display: flex;
 }
+
 .p2__item{
-    background-color: green;
-    width: 16%;
-    height: 190px;
-    float: left;
-    margin: 0 10px;
-    z-index: 10;
-}
-.p2__item img{
-    width: 100%;
-}
-.p2__item img:nth-of-type(2){ /* shadow 그림자 */
-    position: relative;
-    top: -50px;
-    z-index: 0;
-}
-/* --------------------- */
-.p2__prods__img{ /* page2 큰 이미지 */
-    width: 280px;
-    height: 325px;
-    object-fit: cover;
-}
-.p2__prods__img img{
-    width: 100%;
+    /* border: 1px solid white; */
+    width: 120px;
 }
 
 /* -----페이지3----------------------------------------------------- */
-/* .section:nth-of-type(3){
-    background-image: src("img/background/Bg_page3.png");
-} */
-#p3__container--1{}
+#p3__slider__container{}
 
 #p3__slider{}
 
@@ -213,15 +224,11 @@ html{
     float: left;
 }
 
-.p3__slider__item img{
-    width: 100%;
-}
-
 #p3__txt{}
 
 #p3__txt p{}
 
-#p3__container--2{}
+#p3__prods__container{}
 
 #p3__prods__list{}
 
@@ -229,69 +236,82 @@ html{
     width: 150px;
     float: left;
 }
-.p3__prods__item img{
-    width: 100%;
-}
 
 /* -----페이지4----------------------------------------------------- */
 #p4__container{
+    /* background-color: pink; */
+    height: calc(100vh - 120px);
     display: flex;
-    justify-content: space-around;
-    /* align-items: baseline; */
-    justify-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
-#p4__video{}
-#p4__video iframe{}
+#p4__video{
+    width: 919px;
+    height: 517px;
+    /* background-color: yellow; */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--shadow-color);
+}
 
-#p4__prods{}
+#p4__prods {
+    /* background-color: green; */
+    width: 360px;
+    height: 520px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 20px;
+}
+
+#p4__prods__txt{
+    color: white;
+}
+#p4__prods__txt h2{
+    font-size: 24px;
+    padding: 12px 0;
+}
+#p4__prods__txt p{
+    font-size: 16px;
+}
 
 #p4__prods__list{
+    /* background-color: red; */
+    width: 320px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 }
 
 .p4__prods__item{
     width: 100px;
-    float: left;
+    /* border: 1px solid yellow; */
 }
-
-.p4__prods__item img{
-    width: 100%;
-}
-
-.shadow{}
 
 /* -----페이지5----------------------------------------------------- */
 #p5__txt__container{
-    max-width: 320px;
+    width: 480px;
     /* background-color: blue; */
     margin: 0 auto;
     text-align: center;
-    position: relative;
-    top: 80px;
-}
-
-#p5__txt__container h2,
-#p5__txt__container p{
-
-}
-
-#p5__list__container{
-    /* background-color: yellow; */
-    width: fit-content;
-    /* padding: 40px; */
+    padding: 8vh;
 }
 
 #p5__list{
+    /* background-color: yellow; */
     width: 100%;
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .p5__item__container{
-    background-color: var(--main-bg-color);
+    background-color: var(--main-bg-color-60);
     width: 300px;
+    /* height: 48vh; */
     border-radius: 10px;
 
     display: flex;
@@ -300,24 +320,28 @@ html{
 }
 
 .p5__item__container:hover{
-    background-color: var(--hover--color);
+    box-shadow: 0 0 8px 2px var(--point-color-60);
+    background-color: var(--hover-color);
+    filter: saturate(1.3);
     transition: 0.3s;
-}
-
-.p5__item{
-    width: fit-content;
-    text-align: left;
-    /* background-color: green; */
-    
+    cursor: pointer;
 }
 
 .p5__item__img{
     width: 250px;
+    border-radius: 10px;
 }
 
 .p5__item__txt{
-    width: fit-content;
-    background-color: pink;
+    /* background-color: pink; */
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.p5__item__txt h4{
+    margin: 12px 0;
 }
 
 /* -----footer----------------------------------------------------- */
@@ -348,6 +372,7 @@ html{
 .footer__txt__item p, span{
     font-size: 12px;
     margin-top: 2vh;
+    cursor: pointer;
 }
 
 /* ------------------------ */
@@ -370,9 +395,6 @@ html{
     float: left;
 }
 
-.footer__icon__item img{
-    width: 100%;
-}
 /* ---------------------------------------------------------- */
 
 /* #dots{
@@ -428,11 +450,18 @@ html{
     background-repeat: no-repeat;
 }
 
+.shadow{
+    transform: translateY(160px);
+    opacity: 0.5
+}
+
 .content--wrapper{
     width: 100%;
-    height: 100%;
+height: calc(100vh - 120px);
 
     margin-top: var(--header-h);
+
+    align-items: center;
     
     box-shadow: 0 0 0 2px red inset;
 }

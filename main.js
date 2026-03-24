@@ -14,6 +14,4 @@ $(function(){
         licenseKey: 'gplv3-license',
     });
 
-
-    document.querySelector("#p5__txt__container")
 })
