@@ -27,7 +27,8 @@ html{
 #p3__container,
 #p3__slider__container,
 #p3__slider,
-#p3__prods__list{
+#p3__prods__list,
+.mySwiper{
     display: flex;
 }
 
@@ -230,34 +231,53 @@ html{
     justify-content: space-around;
 }
 
-#p3__slider__container{
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
+.swiper{
+    overflow: visible;
+}
+.mySwiper{
+    width: 800px;
+    height: 400px;
+    overflow: visible;
 }
 
-#p3__slider{
-    align-items: center;
+
+.p3__swiper-pagination{}
+
+.swiper-pagination-bullet.p3__swiper-pagination-bullet{
+    width: 110px;
+    height: 110px;
+    background: transparent;
+    opacity: 1
 }
 
-.p3__slider__item{
-    filter: brightness(0.6);
+.p3__swiper-pagination-bullet img{
+    width: 100%;
+    display: block;
 }
-.center{
+
+.p3__swiper-pagination-bullet .hover{
+    display: none;
+}
+
+.swiper-pagination-bullet-active .default{
+    display: none;
+}
+
+.swiper-pagination-bullet-active .hover{
+    display: block;
+}
+
+.swiper-slide{
     width: 400px;
+    opacity: 0.4;
+}
+.swiper-slide img{
+    width: 100%;
+}
+
+.swiper-slide-active{
     border: 4px solid black;
-    z-index: 10;
-    margin: 0 -100px;
-    filter: brightness(1);
-}
-.second{
-    width: 300px;
-    z-index: 1;
-    margin: 0 -100px;
-}
-.third{
-    width: 200px;
-    z-index: 0;
+    opacity: 1;
 }
 
 #p3__txt{
@@ -272,10 +292,6 @@ html{
 
 .p3__prods__item{
     width: 110px;
-}
-
-.clicked{
-    transform: scale(1.1);
 }
 
 /* -----페이지4----------------------------------------------------- */
@@ -487,10 +503,6 @@ html{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.hidden{
-    display: none;
 }
 
 .shadow{
