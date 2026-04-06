@@ -6,7 +6,7 @@ img { vertical-align: top; width: 100% }
 
 @font-face{
     font-family: "RR";
-    src:url("/font/Recoleta-RegularDEMO.otf")
+    src:url("./font/Recoleta-RegularDEMO.otf")
 }
 /* ----------------------------------- */
 
@@ -133,7 +133,7 @@ html{
     height: 100%;
 }
 
-.p1__prods__item:hover{
+.p1__prods__item:hover img{
     animation: pop .5s;
 }
 
