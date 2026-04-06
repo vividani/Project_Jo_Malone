@@ -1,6 +1,7 @@
 :root{
     --main-bg-color: #F4F4E7;
     --main-bg-color-60: rgba(244, 244, 231, 0.6);
+    --main-bg-color-20: rgba(244, 244, 231, 0.2);
     --footer-bg-color: #2F2F2B;
     --scroll-dots-active-color: #7A766C;
     --scroll-dots-default-color: #D8D4C8;

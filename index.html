@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jo Malone by Daeun Lee</title>
 
-    <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="dist/fullpage.css">
     <link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="variables.css">
 
     
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -20,16 +20,15 @@
 <body>
     <div id="header">
         <div id="logo">
-            <img src="img/logo_black.png" alt="">
-            <img class="hidden" src="img/logo_white.png" alt="">
+            <img class="logo-black" src="img/logo_black.png" alt="">
+            <img class="logo-white" src="img/logo_white.png" alt="">
         </div>
         <ul id="nav">
-            <li class="nav__item">Products</li>
-            <li class="nav__item">New</li>
-            <li class="nav__item">Gifts</li>
-            <li class="nav__item">Collections</li>
-            <li class="nav__item">Service</li>
-            <li class="nav__item">Story</li>
+            <li class="nav__item" data-anchor="home">Home</li>
+            <li class="nav__item" data-anchor="bestsellers">Bestsellers</li>
+            <li class="nav__item" data-anchor="gifts">Gifts</li>
+            <li class="nav__item" data-anchor="mens">Mens</li>
+            <li class="nav__item" data-anchor="supports">Supports</li>
         </ul>
     </div>
     <!-- -------------------------- -->
@@ -42,23 +41,29 @@
 
             <ul id="p1__prods__list">
                 <li class="p1__prods__item">
-                    <img src="img/img_products/img_cologne1.png">
+                    <a href="https://www.jomalone.com/colognes" target="_blank"><img src="img/img_products/img_cologne1.png"></a>
+                    
                     <p>Colognes</p>
                 </li>
                 <li class="p1__prods__item">
-                    <img src="img/img_products/img_candle2.png" alt="">
+                    <a href="https://www.jomalone.com/home/candles" target="_blank"><img src="img/img_products/img_candle2.png" alt=""></a>
+
                     <p>Candles</p>
                 </li>
                 <li class="p1__prods__item">
-                    <img src="img/img_products/img_body1.png" alt="">
+                    <a href="https://www.jomalone.com/bath-body
+                    " target="_blank"><img src="img/img_products/img_body1.png" alt=""></a>
+
                     <p>Body & wash</p>
                 </li>
                 <li class="p1__prods__item">
-                    <img src="img/img_products/img_diffuser1.png" alt="">
+                    <a href="https://www.jomalone.com/home/diffusers" target="_blank"><img src="img/img_products/img_diffuser1.png" alt=""></a>
+                    
                     <p>diffusers</p>
                 </li>
                 <li class="p1__prods__item">
-                    <img src="img/img_products/img_gift.png" alt="">
+                    <a href="https://www.jomalone.com/gift-giving" target="_blank"><img src="img/img_products/img_gift.png" alt=""></a>
+                    
                     <p>Gifts</p>
                 </li>
             </ul>
@@ -71,162 +76,184 @@
         <div id="section2" class="section bg">
             <div class="content--wrapper">
                 <div id="p2__container">
-                    <div class="p2__arrow">
+                    <div class="p2__arrow swiper-button-prev">
                         <img src="img/icons/icon_arrow_left.png" alt="">
                     </div>
                     <!-- -------------------------- -->
-                     <div id="p2__track">
-                        <div class="p2__slide">
-                            <div class="p2__slider p2__slider--right">
-                                <div class="p2__prods__img">
-                                    <img src="img/img_category3.png" alt="">
-                                </div>
-                                
-                                <div class="p2__txt-and-list">
-                                    <div class="p2__txt">
-                                        <p>Body & Hand Wash</p>
-                                        <hr>
-                                        <span>Gentle care, beautifully considered.</span>
+                     <div id="p2__track" class="swiper p2Swiper">
+                        <div class="swiper-wrapper">
+                            <div class="p2__slide swiper-slide">
+                                <div class="p2__slider p2__slider--right">
+                                    <div class="p2__prods__img">
+                                        <img src="img/img_category1.png" alt="">
                                     </div>
-                                    <ul class="p2__list">
-                                        <li class="p2__item">
-                                            <img  class="shadow"src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_body1.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_body2.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_body3.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt=""> <img src="img/img_products/img_body4.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_body5.png" alt="">
-                                        </li>
-                                    </ul>
+                                    
+                                    <div class="p2__txt-and-list">
+                                        <div class="p2__txt">
+                                            <p>Colognes</p>
+                                            <hr>
+                                            <span>Fragrances that become part of you.</span>
+                                        </div>
+                                        <ul class="p2__list">
+                                            <li class="p2__item">
+                                                <p>Blackberry & Bay Cologne</p>
+                                                <img  class="shadow"src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_cologne1.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>English Pear & Freesia Cologne</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_cologne2.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Wood Sage & Sea Salt  Cologne</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_cologne3.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Lime Basil & Mandarin Cologne</p>
+                                                <img class="shadow" src="img/Shadow.png" alt=""> <img src="img/img_products/img_cologne4.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Hinoki & Cedarwood Cologne</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_cologne5.png" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
                                 </div>
-                                
-                            </div>
-                            <!-- ---------------------- -->
-                            <div class="p2__slider">
-                                <div class="p2__prods__img">
-                                    <img src="img/img_category4.png" alt="">
-                                </div>
+                                <!-- ---------------------- -->
+                                <div class="p2__slider">
+                                    <div class="p2__prods__img">
+                                        <img src="img/img_category2.png" alt="">
+                                    </div>
 
-                                <div class="p2__txt-and-list">
-                                    <div class="p2__txt">
-                                        <p>Diffusers</p>
-                                        <hr>
-                                        <span>A gentle presence in the room.</span>
+                                    <div class="p2__txt-and-list">
+                                        <div class="p2__txt">
+                                            <p>Candles</p>
+                                            <hr>
+                                            <span>Soft light. Subtle atmosphere.</span>
+                                        </div>
+                                        <ul class="p2__list">
+                                            <li class="p2__item">
+                                                <p>Orange Bitters Scented Candle</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_candle1.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>English Oak Scented Candle</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_candle2.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Pomegranate Noir Scented Candle</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_candle3.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Myrrh & Tonka Scented Candle</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_candle4.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Peony & Blush Suede Scented Candle</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_candle5.png" alt="">
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <ul class="p2__list">
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_diffuser1.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_diffuser2.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_diffuser3.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_diffuser4.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_diffuser5.png" alt="">
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
+                            <div class="p2__slide swiper-slide">
+                                <div class="p2__slider p2__slider--right">
+                                    <div class="p2__prods__img">
+                                        <img src="img/img_category3.png" alt="">
+                                    </div>
+                                    
+                                    <div class="p2__txt-and-list">
+                                        <div class="p2__txt">
+                                            <p>Body & Hand Wash</p>
+                                            <hr>
+                                            <span>Gentle care, beautifully considered.</span>
+                                        </div>
+                                        <ul class="p2__list">
+                                            <li class="p2__item">
+                                                <p>Pomegranate Noir Reed Diffuser</p>
+                                                <img  class="shadow"src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_body1.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>English Pear & Freesia Reed Diffuser</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_body2.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Lime Basil & Mandarin Reed Diffuser</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_body3.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Velvet Rose & Oud Reed Diffuser</p>
+                                                <img class="shadow" src="img/Shadow.png" alt=""> <img src="img/img_products/img_body4.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Peony & Blush Suede Reed Diffuser</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_body5.png" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                                <!-- ---------------------- -->
+                                <div class="p2__slider">
+                                    <div class="p2__prods__img">
+                                        <img src="img/img_category4.png" alt="">
+                                    </div>
+
+                                    <div class="p2__txt-and-list">
+                                        <div class="p2__txt">
+                                            <p>Diffusers</p>
+                                            <hr>
+                                            <span>A gentle presence in the room.</span>
+                                        </div>
+                                        <ul class="p2__list">
+                                            <li class="p2__item">
+                                                <p>Pomegranate Noir Body & Hand Lotion</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_diffuser1.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>English Pear & Freesia Body Cream</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_diffuser2.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Cypress &  Grapevine Body & Hand Wash</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_diffuser3.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Pomegranate Noir Bath Oil</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_diffuser4.png" alt="">
+                                            </li>
+                                            <li class="p2__item">
+                                                <p>Peony & Blush Suede Body Cream</p>
+                                                <img class="shadow" src="img/Shadow.png" alt="">
+                                                <img src="img/img_products/img_diffuser5.png" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
                         </div>
                      
-                        <div class="p2__slide">
-                            <div class="p2__slider p2__slider--right">
-                                <div class="p2__prods__img">
-                                    <img src="img/img_category1.png" alt="">
-                                </div>
-                                
-                                <div class="p2__txt-and-list">
-                                    <div class="p2__txt">
-                                        <p>Colognes</p>
-                                        <hr>
-                                        <span>Fragrances that become part of you.</span>
-                                    </div>
-                                    <ul class="p2__list">
-                                        <li class="p2__item">
-                                            <img  class="shadow"src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_cologne1.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_cologne2.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_cologne3.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt=""> <img src="img/img_products/img_cologne4.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_cologne5.png" alt="">
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                            </div>
-                            <!-- ---------------------- -->
-                            <div class="p2__slider">
-                                <div class="p2__prods__img">
-                                    <img src="img/img_category2.png" alt="">
-                                </div>
-
-                                <div class="p2__txt-and-list">
-                                    <div class="p2__txt">
-                                        <p>Candles</p>
-                                        <hr>
-                                        <span>Soft light. Subtle atmosphere.</span>
-                                    </div>
-                                    <ul class="p2__list">
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_candle1.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_candle2.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_candle3.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_candle4.png" alt="">
-                                        </li>
-                                        <li class="p2__item">
-                                            <img class="shadow" src="img/Shadow.png" alt="">
-                                            <img src="img/img_products/img_candle5.png" alt="">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                     
-                     </div>                    
+                    </div>
                     <!-- -------------------------- -->
-                    <div class="p2__arrow">
+                    <div class="p2__arrow swiper-button-next">
                         <img src="img/icons/icon_arrow_right.png" alt="">
                     </div>
                 </div>
@@ -237,7 +264,7 @@
         <div id="section3" class="section bg">
             <div class="content--wrapper">
                 <div id="p3__container">
-                    <div class="swiper mySwiper">
+                    <div class="swiper p3Swiper">
                         <ul class="swiper-wrapper">
                             <li class="swiper-slide">
                                 <img src="img/img_gift_mood1.png" alt="">
@@ -258,7 +285,7 @@
                     </div>
                     <!-- ---------------------- -->
                     <div id="p3__txt">
-                        <p>Lime Basil & Mandarin & Peony Blush Suede Diffuser Duo</p>
+                        <p></p>
                     </div>
                     <!-- -------------------------- -->
                     <div class="p3__swiper-pagination" id="p3__prods__list">
@@ -446,8 +473,6 @@
                             </a>
                         </li>
                     </ul>
-                </div>
-                    
                 </div>
             </div>
         </div>

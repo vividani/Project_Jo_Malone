@@ -1,49 +1,92 @@
 new fullpage('#fullpage', {
     autoScrolling: true,
     navigation: true,
-    navigationPosition: 'right',
+    navigationPosition: 'left',
     responsiveWidth: 700,
     anchors: ['home', 'bestsellers', 'gifts', 'mens', 'supports', 'footer'],
     // parallax: true,
     onLeave: function(origin, destination, direction){
-        console.log("Leaving section" + origin.index);
+        if(destination.index === 3){
+            document.body.classList.add("header-white");
+        }else{
+            document.body.classList.remove("header-white");
+        }
     },
-    verticalCentered: false,
-    paddingBottom: '0px',
+    verticalCentered: true,
+    // paddingBottom: '0px',
     licenseKey: 'gplv3-license',
 });
 
 
 
-var swiper = new Swiper('.mySwiper', {
+const p2Backgrounds = [
+"img/background/Bg_page2_texture1.png",
+"img/background/Bg_page2_texture2.png"
+];
+
+const section2 = document.querySelector("#section2");
+
+var p2Swiper = new Swiper('.p2Swiper', {
+    effect: "flip",
+    grabCursor: true,
+    slidesPerView: 1,
+    loop: false,
+    speed: 600,
+    initialSlide: 1,
+
+    fadeEffect: {
+        crossFade: true,
+    },
+
+    navigation: {
+        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next"
+    },
+
+    on: {
+        slideChange: function () {
+            const index = this.realIndex;
+
+            section2.style.backgroundImage = `url(${p2Backgrounds[index]})`
+        }
+    },
+
+});
+
+
+
+const p3Texts = [
+    "Fragrant Festivities Cologne Collection",
+    "Twelve Day Ornament Collection",
+    "Lime Basil & Mandarin & Peony Blush Suede Diffuser Duo",
+    "Green & Blue Ornament",
+    "Ginger Biscuit Cologne"
+];
+
+var p3swiper = new Swiper('.p3Swiper', {
     effect: 'creative',
     loop: true,
     slidesPerView: 2,
     grabCursor: true,
     centeredSlides: true,
+    initialSlide: 2,
 
     creativeEffect: {
         limitProgress: 1,
         prev: {
             scale: 0.6,
             shadow: true,
-            rotate: [0,-25,0],
+            rotate: [0,0,0],
             translate: ["-50%", 0, -200],
         },
         next: {
             scale: 0.6,
             shadow: true,
-            rotate: [0,25,0],
+            rotate: [0,0,0],
             translate: ["50%", 0, -200],
         },
     },
 
-    // pagination: {
-    //     el: ".p3__swiper-pagination",
-    //     bulletActiveClass: 'on',
-    //     clickable: true,
-    //     bulletClass: "p3__swiper-pagination-bullet",
-    // },
     pagination: {
         el: "#p3__prods__list",
         clickable: true,
@@ -57,35 +100,32 @@ var swiper = new Swiper('.mySwiper', {
             `;
         }
     },
-    breakpoints: {
-        768: {
-            creativeEffect: {
-                limitProgress: 1,
-                speed: 800,
-                watchSlidesProgress: true,
-                prev: {
-                    opacity: 1,
-                },
-            },
-        },
-    },
 
+    on:{
+        slideChange: function () {
+
+            const textEl = document.querySelector("#p3__txt p");
+            const index = this.realIndex;
+
+            textEl.style.opacity = 0;
+
+            setTimeout(() => {
+                textEl.textContent = p3Texts[index];
+                textEl.style.opacity = 1;
+            }, 150)
+        }
+    } 
 });
 
-// const bullets = document.querySelectorAll(".pe__swiper-pagination-bullet");
 
-// bullets.forEach((bullet, index) => {
-//     bullet.addEventListener("click", () => {
-//         swiper.slideTo(index);
 
-//         bullets.forEach(b => b.classList.remove("active"));
-//         bullet.classList.add("active");
-//     });
-// });
+const navItems = document.querySelectorAll(".nav__item");
 
-// swiper.on("slideChange", function () {
+navItems.forEach(item => {
+    item.addEventListener("click", () => {
 
-//     bullets.forEach(b => b.classList.remove("active"));
-//     bullets[swiper.activeIndex].classList.add("active");
+        const target = item.dataset.anchor;
+        fullpage_api.moveTo(target);
 
-// });
+    });
+});
